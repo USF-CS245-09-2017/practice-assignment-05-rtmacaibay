@@ -1,11 +1,12 @@
 
 public class Practice5Test {
-	
-	protected BSTree tree;
+	//changed this so make BSTree of type String
+	protected BSTree<String> tree;
 
 
 	public Practice5Test() {
-		tree = new BSTree();
+		//changed this too bc of above reason
+		tree = new BSTree<String>();
 	}
 
 
@@ -53,6 +54,9 @@ public class Practice5Test {
 		// Allen Codd Dijstra Hopper Knuth Lee Lovelace Matsumoto Thompson Turing Wilson
 		if (tree.toStringInOrder().equals("Allen Codd Dijstra Hopper Knuth Lee Lovelace Matsumoto Thompson Turing Wilson"))
 			return true;
+		//added this to check if i did it right
+		System.out.println("Order:     " + tree.toStringInOrder() + "|");
+		System.out.println("Expecting: " + "Allen Codd Dijstra Hopper Knuth Lee Lovelace Matsumoto Thompson Turing Wilson|");
 		return false;
 	}
 	
@@ -65,7 +69,6 @@ public class Practice5Test {
 		System.out.println("Expecting: " + "Turing Knuth Dijstra Codd Allen Hopper Lee Lovelace Thompson Matsumoto Wilson|");
 		return false;
 	}
-	
 	
 	public void runTests() {
 		int grade = 0;
@@ -93,7 +96,6 @@ public class Practice5Test {
 		} catch (Exception e) {
 			System.out.println("[   ] = tree cannot handle multiple copies of the same data.");
 		}
-		
 		// Test 3: check that the (in-order) ordering of the tree is correct
 		try {
 			if (treeInOrderTest()) {
@@ -103,7 +105,8 @@ public class Practice5Test {
 				throw new Exception("Fails.");
 			}
 		} catch (Exception e) {
-			System.out.println("[   ] = the tree does not appears to store data correct pre-order order.");
+			//changed this bc of a typo
+			System.out.println("[   ] = the tree does not appears to store data correct in-order order.");
 		}
 		
 		// Test 4: check that the (pre-ordering) ordering of the tree is correct
